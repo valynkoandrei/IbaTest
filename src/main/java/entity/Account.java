@@ -1,8 +1,5 @@
 package entity;
 
-/**
- * Created by Andrei on 03.03.2017.
- */
 public class Account {
     private String name;
     private int periodCalculation;
@@ -24,7 +21,7 @@ public class Account {
                    int sumOfUnrealizableProducts, boolean placeOfWork, boolean privileges,
                    boolean single, int amountOfChildren, int amountOfChildrenDisabled,
                    int amountOfDependents, int costOfInsurance, int costOfStudy, int costOfHousing,
-                   int costOfBusinessActivities, int tax)
+                   int costOfBusinessActivities)
     {
         this.name = name;
         this.periodCalculation = periodCalculation;
@@ -40,7 +37,7 @@ public class Account {
         this.costOfStudy = costOfStudy;
         this.costOfHousing = costOfHousing;
         this.costOfBusinessActivities = costOfBusinessActivities;
-        this.tax = tax;
+        this.tax=0;
     }
 
     public String getName() {
