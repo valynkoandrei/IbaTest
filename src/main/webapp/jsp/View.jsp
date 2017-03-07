@@ -10,89 +10,56 @@
 <html>
 <head>
     <title>View</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+
+    <script src="${pageContext.request.contextPath}/js/jquery/jquery-3.1.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/bootstrap/bootstrap.min.js"></script>
 </head>
 <body>
 <jsp:useBean id="allUser" class="java.util.ArrayList" scope="session"/>
-
-<h1>It's OK!</h1>
-<table>
-    <c:forEach items="${allUser}" var="user">
-        <tr>
-            <td>
-                ${user.getName()}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                ${user.getPeriodCalculation()}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                ${user.getSumOfRealizationProducts()}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                    ${user.getSumOfUnrealizableProducts()}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                    ${user.isPlaceOfWork()}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                    ${user.isPrivileges()}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                    ${user.isSingle()}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                    ${user.getAmountOfChildren()}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                    ${user.getAmountOfChildrenDisabled()}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                    ${user.getAmountOfDependents()}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                    ${user.getCostOfInsurance()}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                    ${user.getCostOfStudy()}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                    ${user.getCostOfHousing()}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                    ${user.getCostOfBusinessActivities()}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                    ${user.getTax()}
-            </td>
-        </tr>
-    </c:forEach>
-</table>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 details">
+            <table class="table">
+                <thead class="thead-default">
+                    <tr>
+                        <th>#</th>
+                        <th>Username</th>
+                        <th>PlaceOfWork</th>
+                        <th>StepOne</th>
+                        <th>StepTwo</th>
+                        <th>StepThree</th>
+                        <th>StepFour</th>
+                        <th>StepFive</th>
+                        <th>StepSix</th>
+                        <th>Tax</th>
+                    </tr>
+                </thead>
+            <c:forEach items="${allUser}" var="user">
+                <tbody>
+                    <tr>
+                        <th scope="row">${user.getId()}</th>
+                        <td>${user.getName()}</td>
+                        <td>${user.isPlaceOfWork()}</td>
+                        <td>${user.getStepOne()}</td>
+                        <td>${user.getStepTwo()}</td>
+                        <td>${user.getStepThree()}</td>
+                        <td>${user.getStepFour()}</td>
+                        <td>${user.getStepFive()}</td>
+                        <td>${user.getStepSix()}</td>
+                        <td>${user.getTax()}</td>
+                    </tr>
+                </tbody>
+            </c:forEach>
+            </table>
+            <div class="form-group">
+                <input type="submit" name="Button" class="btn btn-primary" value="Калькулятор" />
+            </div>
+            <a href="${pageContext.request.contextPath}/index.jsp" class="au">На главную</a>
+        </div>
+    </div>
+</div>
 </body>
 </html>

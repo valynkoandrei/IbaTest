@@ -79,6 +79,16 @@ public class User {
     public User() {
     }
 
+    public User(String name, int periodCalculation, long sumOfRealizationProducts, long sumOfUnrealizableProducts, boolean placeOfWork, long costOfBusinessActivities) {
+        this.name = name;
+        this.periodCalculation = periodCalculation;
+        this.sumOfRealizationProducts = sumOfRealizationProducts;
+        this.sumOfUnrealizableProducts = sumOfUnrealizableProducts;
+        this.placeOfWork = placeOfWork;
+        this.costOfBusinessActivities = costOfBusinessActivities;
+        setTax();
+    }
+
     public String getName() {
         return name;
     }
@@ -233,5 +243,29 @@ public class User {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public long getStepOne() {
+        return stepOne;
+    }
+
+    public long getStepTwo() {
+        return stepTwo;
+    }
+
+    public long getStepThree() {
+        return stepThree;
+    }
+
+    public long getStepFour() {
+        return stepFour;
+    }
+
+    public long getStepFive() {
+        return stepFive;
+    }
+
+    public long getStepSix() {
+        return stepSix;
     }
 }
