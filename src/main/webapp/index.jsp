@@ -22,7 +22,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 details">
-                    <div class="col-lg-6 col-md-6 col-sm-6 xi">
+                    <div class="col-lg-12 col-md-12 col-sm-12 xi">
                         <p>Ваше имя и фамилия</p>
                         <label>
                             <input id="username"
@@ -34,13 +34,12 @@
                                        ng-required="true"
                                        ng-minlength="2"/>
                         </label>
-                    </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 xi">
+                    <br>
                     <span class="alert alert-danger" ng-show="myForm.myFormUsername.$dirty && myForm.myFormUsername.$error.required">
                             The User Name is Mandatory
                     </span>
                     <span class="alert alert-danger" ng-show="myForm.myFormUsername.$dirty && myForm.myFormUsername.$error.minlength">
-                        The First Name should be minimum 2 characters
+                        The Name should be minimum 2 characters
                     </span>
                 </div>
 
@@ -161,7 +160,7 @@
                     <div class="form-group">
                         <label><p>Количество детей до 18 лет</p></label><br>
 
-                        <input class="form-control" type="text" name="amountOfChildren" id="amountOfChildren" value="3" ng-disabled="user.placeOfWork  == 'true'"/><br>
+                        <input class="form-control" type="text" name="amountOfChildren" id="amountOfChildren" ng-model="user.child_amount" ng-disabled="user.placeOfWork  == 'true'"/><br>
 
                     </div>
 
@@ -169,18 +168,11 @@
 
                     <div class="form-group">
                         <label for="amountOfChildrenDisabled">из них количество детей-инвалидов:</label>
-                        <select class="form-control" name="amountOfChildrenDisabled" id="amountOfChildrenDisabled" value="1" ng-disabled="user.placeOfWork  == 'true'"/><br>>
-                            <option>4</option>
 
+                        <select class='form-control vx' name="amountOfChildrenDisabled" id="amountOfChildrenDisabled" ng-model="user.amountOfChildrenDisabled" ng-disabled="user.placeOfWork  == 'true'">
+                            <option ng-repeat="number in user.child_disabled_amount" value={{number}}>{{number}}</option>
                         </select>
                     </div>
-
-                    <%--<div class="form-group">--%>
-                        <%--<label><p>из них количество детей-инвалидов</p></label><br>--%>
-
-                        <%--<input class="form-control" type="text" name="amountOfChildrenDisabled" id="amountOfChildrenDisabled" value="1" ng-disabled="user.placeOfWork  == 'true'"/><br>--%>
-
-                    <%--</div>--%>
 
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 xn">
@@ -220,10 +212,9 @@
                         <input class="form-control" type="text" id="costOfBusinessActivities" name="costOfBusinessActivities" ng-model="user.costOfBusinessActivities"/><br>
 
                     </div>
-                    <div class="col-lg-12 col-md-12 col-sm-12 xd">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
 
-                        <span class="alert alert-danger" ng-show="!((+user.sumOfUnrealizableProducts + +user.sumOfRealizationProducts) >= +user.costOfBusinessActivities)">The value is not a valid integer!</span>
-
+                        <span class="alert nx alert-danger" ng-show="!((+user.sumOfUnrealizableProducts + +user.sumOfRealizationProducts) >= +user.costOfBusinessActivities)">The value is not a valid integer!</span>
 
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 xd">
@@ -236,7 +227,7 @@
         </div>
     </div>
 </div>
-            </form>
+    </form>
 
 </body>
 </html>

@@ -1,6 +1,8 @@
 package entity;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 @Entity
 @Table(name = "users")
@@ -206,15 +208,18 @@ public class User {
     }
 
     public void setTax() {
-        if (placeOfWork) tax=(sumOfRealizationProducts+sumOfUnrealizableProducts - costOfBusinessActivities) * 0.16;
+        if (placeOfWork) tax=((sumOfRealizationProducts+sumOfUnrealizableProducts) - costOfBusinessActivities) * 0.16;
         else {
             stepOne = sumOfRealizationProducts + sumOfUnrealizableProducts;
-            if (stepOne <= 15_020_000) stepTwo = stepOne - (830_000 * periodCalculation);
+
+            if ((stepOne-costOfBusinessActivities) <= 15_020_000) stepTwo = stepOne - (830_000 * periodCalculation);
             else stepTwo = stepOne;
+
             if (stepTwo < 0) stepTwo = 0;
             if (privileges) stepThree = stepTwo - (1_170_000 * periodCalculation);
             else stepThree = stepTwo;
             if (stepThree < 0) stepThree = 0;
+
             if (amountOfDependents > 0) {
                 if (single && amountOfChildren > 0)
                     stepFour = stepThree - periodCalculation * 460000 * (amountOfChildren + amountOfDependents);
@@ -227,14 +232,19 @@ public class User {
                     stepFour = stepThree - periodCalculation * 46000 * (amountOfChildren + amountOfDependents);
             }
             if (stepFour < 0) stepFour = 0;
+
             if (costOfInsurance <= 16000000) stepFive = stepFour - costOfInsurance;
             else stepFive = stepFour - 16000000;
             if (stepFive < 0) stepFive = 0;
             stepSix = stepFive - (costOfStudy + costOfHousing + costOfBusinessActivities);
             if (stepSix < 0) stepSix = 0;
-
             tax = stepSix * 0.16;
         }
+
+        tax=tax*100;
+        tax = Math.round(tax);
+        tax = tax / 100;
+
     }
 
     public long getId() {

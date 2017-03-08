@@ -27,8 +27,10 @@ span {
 	padding-bottom: 70px;
 }
 
-.xi span {
-	margin-left: 0px; 
+
+
+.vx {
+	width: 100px;
 }
 
 .xu input {
@@ -55,24 +57,10 @@ span {
 	text-align: center;
 }
 
-.alert {
+.nx {
 
     margin-left: -15px;
 }
-
-
- /*TABLE {*/
- 	/*margin-bottom: 50px;*/
-
-    /*border-collapse: collapse; */
-   /*}*/
-   /*TD, TH {*/
-    /*padding: 3px; */
-    /*border: 1px solid black; */
-   /*}*/
-   /*TH {*/
-    /*background: #b0e0e6; */
-/*}*/
 
 .au {
 	display: inline-block;
