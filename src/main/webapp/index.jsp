@@ -180,7 +180,7 @@
                     <div class="form-group">
                         <label><p>Количество иждивенцев</p></label><br>
 
-                        <input class="form-control" type="text" name="amountOfDependents" id="amountOfDependents" value="6789" ng-disabled="user.placeOfWork  == 'true'" /><br>
+                        <input class="form-control" type="text" name="amountOfDependents" id="amountOfDependents" value="0" ng-disabled="user.placeOfWork  == 'true'" /><br>
 
                     </div>
                 </div>
@@ -188,21 +188,21 @@
                     <div class="form-group">
                         <label><p>Сумма расходов за выбранный период по страховым взносам по договорам добровольного страхования жизни и дополнительной пенсии, заключенным на срок не менее трех лет, а также по договорам добровольного страхования медицинских расходов, руб.</p></label><br>
 
-                        <input class="form-control" type="text" name="costOfInsurance" id="costOfInsurance" value="123" ng-disabled="user.placeOfWork  == 'true'" /><br>
+                        <input class="form-control" type="text" name="costOfInsurance" id="costOfInsurance" value="0" ng-disabled="user.placeOfWork  == 'true'" /><br>
 
                     </div>
 
                     <div class="form-group">
                         <label><p>Сумма расходов за выбранный период на получение первого платного образования своего либо близких родственников, руб.</p></label><br>
 
-                        <input class="form-control" type="text" name="costOfStudy" id="costOfStudy" value="1234589" ng-disabled="user.placeOfWork  == 'true'" /><br>
+                        <input class="form-control" type="text" name="costOfStudy" id="costOfStudy" value="0" ng-disabled="user.placeOfWork  == 'true'" /><br>
 
                     </div>
 
                     <div class="form-group">
                         <label><p>Сумма расходов за выбранный период на строительство либо приобретение жилья для нуждающихся в улучшении жилищных условий, руб.</p></label><br>
 
-                        <input class="form-control" type="text" name="costOfHousing" id="costOfHousing" value="1289" ng-disabled="user.placeOfWork  == 'true'" /><br>
+                        <input class="form-control" type="text" name="costOfHousing" id="costOfHousing" value="0" ng-disabled="user.placeOfWork  == 'true'" /><br>
 
                     </div>
 

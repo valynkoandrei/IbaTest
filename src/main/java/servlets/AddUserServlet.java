@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/User")
-public class AddUserServlet extends HttpServlet {
+public class AddUserServlet extends BaseHttpServlet {
 
     private User getUser(HttpServletRequest request, HttpServletResponse response){
         String username=request.getParameter("myFormUsername");
@@ -42,9 +42,7 @@ public class AddUserServlet extends HttpServlet {
         }
     }
 
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setStatus(200);
         User user =getUser(request,response);
         UserController userController = new UserController();

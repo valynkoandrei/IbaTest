@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <label>Подоходный налог больше:</label>
-                    <input class="form-control" type="text" name="taxFilter" id="taxFilter"/>
+                    <input class="form-control" type="text" value="0" name="taxFilter" id="taxFilter"/>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="form-group">

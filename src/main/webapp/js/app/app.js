@@ -4,11 +4,11 @@ IbaTest.controller('mainFormController', function($scope) {
     $scope.user = {};
     $scope.user.period = '3';
     $scope.user.placeOfWork = "true";
-    $scope.user.sumOfRealizationProducts = "123";
-    $scope.user.sumOfUnrealizableProducts = "134";
-    $scope.user.costOfBusinessActivities = '4563';
-    $scope.user.child_amount = 2;
-    $scope.user.child_disabled_amount = [1,2];
+    $scope.user.sumOfRealizationProducts = "0";
+    $scope.user.sumOfUnrealizableProducts = "0";
+    $scope.user.costOfBusinessActivities = '0';
+    $scope.user.child_amount = 0;
+    $scope.user.child_disabled_amount = [];
     // $scope.user.amountOfChildrenDisabled= ;
 
 
